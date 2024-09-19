@@ -1,46 +1,47 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[6]:
+# In[1]:
+
 
 def saudacoes(nome):
     import random
-    frases = ['Bom dia! Meu nome é {}. Como vai você?'.format(nome),
-              'Olá!', 'Oi, tudo bem?']
+    frases = ['Bom dia! Meu nome é {}. como vai voce'.format(nome),
+             'ola!', 'oi, tudo bem?']
     print(frases[random.randint(0,2)])
-    
+
 def recebeTexto(nome):
     texto = 'Cliente: ' + input('Cliente: ')
-    palavraProibida = ['bocó', 'vagabundo','vagabunda']
+    palavraProibida = ["bocó","vagabunda","vagabundo"]
     for p in palavraProibida:
         if p in texto:
-            print('{}: Não vem não! Me respeite!'.format(nome))
+            print('{}: não vem não! me respeite!'.format(nome))
             return recebeTexto(nome)
         return texto
 
 def buscaResposta(nome, texto):
-    with open('CY1_Aula_17_BaseConhecimento.txt','a+') as conhecimento:
-        conhecimento.seek(0)
-        while True:
-            viu = conhecimento.readline()
-            if viu != '':
-                if texto.replace('Cliente: ','') == 'Tchau':
-                    print('{}: volte sempre!'.format(nome))
-                    return 'fim'
-                elif viu.strip() == texto.strip():
-                    proximalinha = conhecimento.readline()
-                    if 'Chatbot: ' in proximalinha:
-                        return proximalinha
-            else:
-                print('{}: Me desculpe, não sei o que falar'.format(nome))
-                conhecimento.write('\n{}'.format(texto))
-                resposta_user = input(('{}: O que esperava?\n'.format(nome)))
-                conhecimento.write('\nChatbot: {}'.format(resposta_user))
-                return 'Hum...'
-                
+    with open('CY1_Aula17_BaseConhecimento.txt','a+') as c:
+        c.seek(0)
+    while True:
+        viu = c.readline()
+        if viu != '':
+            if texto.replace('Cliente: ','') == 'Tchau':
+                print('{}: volte sempre!'.format(nome))
+                return 'fim'
+            elif viu.strip() == texto.strip():
+                proximalinha = c.readline()
+                if 'Chatbot: ' in  proximalinha:
+                    return proximalinha
+        else:
+            print('{}: Me desculpa, nao sei o que flar'.format(nome))
+            c.write('\n{}'.format(texto))
+            respostas_user = input(('{}: o queresperava?\n'.format(nome)))
+            c.write('n\Chatbot: {}'.format(resposta_user))
+            return 'Hum...'
+
 def exibeResposta(resposta, nome):
-    print(resposta.replace('Chatbot',nome))
+    print(resposta.replace("Chatbot",nome))
     if resposta == 'fim':
-        return 'fim'
-    return 'continua'
+        return "fim"
+    return "continua"
 

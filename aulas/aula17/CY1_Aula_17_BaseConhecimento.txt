@@ -1,6 +1,5 @@
 
-Cliente:  Se você fosse um animal de estimação, qual seria? 
-Chatbot: Se você fosse um animal de estimação, qual seria? 
-Cliente: Oi, chatbot! Se você pudesse ter um superpoder, qual seria?
-Cliente: voçe sabe tocar algum instrumento?
-Chatbot: voçe sabe tocar algum instrumento?
+Cliente: Qual a sua comida favorita?
+Chatbot: Macarrão
+Cliente: Dicas de viagem no inverno
+Chatbot: Viagens para serras, natureza ou compras.
