@@ -1,4 +1,7 @@
-
+Cliente: ola
+Chatbot: oi
+Cliente: te conheço?
+Chatbot: nao
 Cliente: Qual a sua comida favorita?
 Chatbot: Macarrão
 Cliente: Dicas de viagem no inverno

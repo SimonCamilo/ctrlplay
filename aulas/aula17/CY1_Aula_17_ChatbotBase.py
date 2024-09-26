@@ -20,7 +20,7 @@ def recebeTexto(nome):
         return texto
 
 def buscaResposta(nome, texto):
-    with open('CY1_Aula17_BaseConhecimento.txt','a+') as c:
+    with open('CY1_Aula_17_BaseConhecimento.txt','a+') as c:
         c.seek(0)
     while True:
         viu = c.readline()
